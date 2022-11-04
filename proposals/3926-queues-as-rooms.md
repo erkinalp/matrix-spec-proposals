@@ -1,4 +1,4 @@
-# MSC0000: FIFOs and notification queues as rooms
+# MSC3926: FIFOs and notification queues as rooms
 
 This proposal seeks to introduce queues as rooms. 
 
