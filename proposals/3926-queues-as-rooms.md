@@ -88,12 +88,17 @@ allows an experience similar to how notifications are handled in YouTube.
 
 ### Single writer, many reader
 
+TODO
+
 ### Single reader, many writer
+
+TODO
 
 ## Potential issues
 
 Mixed use of persistent and semi-ephemeral data units might cause issues in data unit handling
-in certain server implementations.
+in certain server implementations. Certain users may get over-pinged, as this feature allows
+sender-controlled mentions.
 
 ## Alternatives
 
