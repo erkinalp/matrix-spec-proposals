@@ -94,7 +94,7 @@ When a Matrix client scans a room ticket barcode, it shall:
    - For knock rooms: Send a knock request, including the join reason if present
    - For invite-only rooms with a token: Use the token to claim the invite, then join
 
-If the join reason field is present, clients should pre-populate the knock reason field with this value, allowing the user to modify it before sending if desired.
+If the join reason field is present, clients should pre-populate the reason field in the join or knock request with this value, allowing the user to modify it before sending if desired.
 
 ### Paper Layout Specifications
 
