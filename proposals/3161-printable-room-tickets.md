@@ -92,11 +92,11 @@ If the join reason field is present, clients should pre-populate the knock reaso
 
 ### Paper Layout Specifications
 
-The ticket layout specifications are derived from TCDD (Turkish State Railways) ticket printer specifications, which implement TAP TSI standards. Two standard formats are defined to accommodate different printing equipment and use cases.
+The ticket layout specifications are derived from TCDD (Turkish State Railways) ticket printer specifications, which implement TAP TSI standards. The large format dimensions are also similar to ICAO Doc 9303 compliant airline boarding passes, making the format familiar to users and compatible with existing ticket printing infrastructure across transportation sectors. Two standard formats are defined to accommodate different printing equipment and use cases.
 
 #### Large Format (210mm x 74mm)
 
-This format is designed for compatibility with standard ticket printers used at transportation hubs, event venues, and similar locations. It can also be produced on standard A4 paper by printing and cutting into four equal longitudinal strips.
+This format is designed for compatibility with standard ticket printers used at transportation hubs, event venues, and similar locations. The dimensions align with both TAP TSI railway ticket standards and ICAO boarding pass specifications, enabling use of existing printing equipment. It can also be produced on standard A4 paper by printing and cutting into four equal longitudinal strips.
 
 Layout zones:
 - Aztec code zone: 49.5mm x 49.5mm, positioned 5mm from the left edge and vertically centered
@@ -215,6 +215,7 @@ Implementations experimenting with this specification before it is finalized sho
 - ISO/IEC 24778:2008 - Information technology - Automatic identification and data capture techniques - Aztec Code bar code symbology specification
 - TAP TSI TD B.12 - Digital Security Elements for Rail Passenger Ticketing (European Union Agency for Railways)
 - TAP TSI TD B.11 - Layout for Electronically Issued Rail Passenger Tickets (European Union Agency for Railways)
+- ICAO Doc 9303 - Machine Readable Travel Documents (International Civil Aviation Organization) - for boarding pass dimension compatibility
 - Matrix Specification - Room Membership (https://spec.matrix.org/latest/client-server-api/#room-membership)
 
 ## Acknowledgements
