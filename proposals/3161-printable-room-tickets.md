@@ -100,6 +100,8 @@ If the join reason field is present, clients should pre-populate the knock reaso
 
 The ticket layout specifications are derived from TCDD (Turkish State Railways) ticket printer specifications, which implement TAP TSI standards. The large format dimensions are also similar to ICAO Doc 9303 compliant airline boarding passes, making the format familiar to users and compatible with existing ticket printing infrastructure across transportation sectors. Two standard formats are defined to accommodate different printing equipment and use cases.
 
+Unlike ICAO Doc 9303/IATA BCBP and TAP TSI standards, which allow considerable flexibility in visual layout to accommodate diverse printing equipment and organizational branding requirements, this specification defines strict layout zones and element positioning. This deliberate constraint ensures that Matrix room tickets are immediately recognizable as tickets at a glance, establishing a consistent visual identity across different issuers and implementations. The predictable appearance also aids users in quickly locating the barcode for scanning and understanding the ticket's purpose.
+
 #### Large Format (210mm x 74mm)
 
 This format is designed for compatibility with standard ticket printers used at transportation hubs, event venues, and similar locations. The dimensions align with both TAP TSI railway ticket standards and ICAO boarding pass specifications, enabling use of existing printing equipment. It can also be produced on standard A4 paper by printing and cutting into four equal longitudinal strips.
