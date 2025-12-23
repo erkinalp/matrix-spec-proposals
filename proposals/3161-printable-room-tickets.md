@@ -106,39 +106,50 @@ Unlike ICAO Doc 9303/IATA BCBP and TAP TSI standards, which allow considerable f
 
 This format is designed for compatibility with standard ticket printers used at transportation hubs, event venues, and similar locations. The dimensions align with both TAP TSI railway ticket standards and ICAO boarding pass specifications, enabling use of existing printing equipment. It can also be produced on standard A4 paper by printing and cutting into four equal longitudinal strips.
 
-Layout zones:
-- Aztec code zone: 49.5mm x 49.5mm, positioned 5mm from the left edge and vertically centered
-- Quiet zone around barcode: Minimum 2mm (the barcode placement provides additional effective quiet zone)
-- Text zone: Remaining area to the right of the barcode
+All coordinates are specified as (X, Y) from the top-left corner of the ticket, with dimensions as Width × Height.
 
-Required printed elements:
-- Aztec barcode
-- Room name (large, prominent text)
-- Room ID (smaller text, may be truncated with ellipsis for display)
-- Issuer information (if available)
+**Barcode zone:**
 
-Optional printed elements:
-- Detailed description or instructions
-- Expiry date/time in human-readable format
-- Organization logo or branding
-- QR code linking to additional information (separate from the Aztec code)
+| Element | Position (X, Y) | Dimensions | Notes |
+|---------|-----------------|------------|-------|
+| Aztec code | (5mm, 12.25mm) | 49.5mm × 49.5mm | Vertically centered; includes 2mm effective quiet zone from edges |
+
+**Text zone** (starts at X=60mm, extends to X=205mm):
+
+| Element | Position (X, Y) | Dimensions | Font | Alignment |
+|---------|-----------------|------------|------|-----------|
+| Room name | (60mm, 8mm) | 140mm × 18mm | Bold, 14-18pt | Left-aligned, single line with ellipsis truncation |
+| Room ID | (60mm, 28mm) | 140mm × 10mm | Monospace, 8-10pt | Left-aligned, truncate with ellipsis if needed |
+| Issuer display name | (60mm, 40mm) | 90mm × 10mm | Regular, 9-11pt | Left-aligned |
+| Expiry date/time | (155mm, 40mm) | 50mm × 10mm | Regular, 9-11pt | Right-aligned, format: "Valid until: YYYY-MM-DD HH:MM" |
+| Description/Instructions | (60mm, 52mm) | 140mm × 18mm | Regular, 8-10pt | Left-aligned, up to 2 lines |
+
+**Optional branding zone** (bottom strip):
+
+| Element | Position (X, Y) | Dimensions | Notes |
+|---------|-----------------|------------|-------|
+| Organization logo | (5mm, 64mm) | 50mm × 8mm | Optional; must not obscure barcode |
+| Additional QR code | (160mm, 52mm) | 18mm × 18mm | Optional; for supplementary URL only |
 
 #### Small Format (54mm x 89mm)
 
 This format matches standard business card dimensions and is suitable for handheld thermal printers, badge printers, and similar compact devices.
 
-Layout zones:
-- Aztec code zone: 49.5mm x 49.5mm, positioned at the top of the ticket, horizontally centered
-- Text zone: Area below the barcode
+All coordinates are specified as (X, Y) from the top-left corner of the ticket, with dimensions as Width × Height.
 
-Required printed elements:
-- Aztec barcode
-- Room name
-- Room ID
+**Barcode zone:**
 
-Optional printed elements:
-- Issuer information
-- Expiry information
+| Element | Position (X, Y) | Dimensions | Notes |
+|---------|-----------------|------------|-------|
+| Aztec code | (2.25mm, 5mm) | 49.5mm × 49.5mm | Horizontally centered with 5mm top margin |
+
+**Text zone** (starts at Y=57mm, extends to Y=87mm):
+
+| Element | Position (X, Y) | Dimensions | Font | Alignment |
+|---------|-----------------|------------|------|-----------|
+| Room name | (2mm, 57mm) | 50mm × 12mm | Bold, 10-12pt | Left-aligned, single line with ellipsis truncation |
+| Room ID | (2mm, 70mm) | 50mm × 8mm | Monospace, 7-8pt | Left-aligned, truncate with ellipsis if needed |
+| Issuer/Expiry | (2mm, 79mm) | 50mm × 8mm | Regular, 7-8pt | Left-aligned; format expiry as "Until: YYYY-MM-DD" |
 
 ### Printing Requirements
 
