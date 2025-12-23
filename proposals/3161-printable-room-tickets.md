@@ -20,6 +20,12 @@ The TAP TSI standard, used extensively in European railway ticketing, demonstrat
 
 Printable room tickets shall feature Aztec codes as the machine-readable component. Aztec codes are chosen over alternatives like QR codes because they do not require a quiet zone, have strong error correction capabilities, and are proven in high-volume ticketing applications per ISO/IEC 24778:2008.
 
+#### Data Density Considerations
+
+Matrix room tickets require higher data density than typical transportation tickets. While railway tickets (per TAP TSI) primarily encode journey identifiers, passenger references, and cryptographic signatures, Matrix room tickets must encode complete room identifiers (which include server hostnames), federation routing information (via servers), optional invite tokens, and join reasons. This results in payloads that may approach 500-1000 bytes for fully-featured tickets, compared to the approximately 100-300 bytes typical of railway tickets.
+
+Dedicated barcode scanners capable of reliably reading high-density Aztec codes (21+ layers, 99×99 modules) have been widely deployed in transportation ticketing since the late 2000s, following the standardization of Aztec codes in ISO/IEC 24778:2008 and the rollout of electronic ticketing standards like UIC 918-3. Modern smartphone cameras with appropriate software can also decode these symbols reliably. Implementers should ensure their scanning solutions support full-range Aztec symbols up to 32 layers (151×151 modules) to accommodate the larger payloads required by this specification.
+
 The barcode shall use the following parameters:
 
 - Symbol type: Aztec Code (full-range symbol)
@@ -215,6 +221,7 @@ Implementations experimenting with this specification before it is finalized sho
 - ISO/IEC 24778:2008 - Information technology - Automatic identification and data capture techniques - Aztec Code bar code symbology specification
 - TAP TSI TD B.12 - Digital Security Elements for Rail Passenger Ticketing (European Union Agency for Railways)
 - TAP TSI TD B.11 - Layout for Electronically Issued Rail Passenger Tickets (European Union Agency for Railways)
+- UIC 918-3 - Electronic Ticket Standard for Rail Passenger Transport (International Union of Railways)
 - ICAO Doc 9303 - Machine Readable Travel Documents (International Civil Aviation Organization) - for boarding pass dimension compatibility
 - Matrix Specification - Room Membership (https://spec.matrix.org/latest/client-server-api/#room-membership)
 
